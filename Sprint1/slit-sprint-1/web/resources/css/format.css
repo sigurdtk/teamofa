@@ -6,7 +6,9 @@ body {
 /* Font sizes */
 h1 {
   font-size: 28px;
-  font-weight: bold;
+  font-weight: bold;  
+  padding-right: 2000px;
+ 
 }
 h2 {
   font-size: 20px;
@@ -21,16 +23,16 @@ h3 {
 }
 
 .layout-outer {
-  background:#fff;    /* right column background colour */
+  background-color:#EBEBEB;    /* right column background colour */
 }
 .layout-outer .layout-inner {
-  background:#f4f4f4; /* left column background colour */
+  background-color:#EBEBEB; /* left column background colour */
   border-right: 1px solid black;
 }
 
 /* Header elements */
 .layout-header {
-  background-color:#fee;
+  background-color:#fff;
   border-bottom:thin solid #000;
   text-align: center;
 }
@@ -63,7 +65,7 @@ h3 {
 table.data {
   width: 90%;
   margin: 10px;
-  border: thin solid black;
+  border: red;
   border-collapse: collapse;
 }
 

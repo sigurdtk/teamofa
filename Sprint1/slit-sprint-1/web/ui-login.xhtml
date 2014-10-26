@@ -4,23 +4,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
   <head>
-    <title>LES</title>
+      <title>LES</title>
+        </head>
+      <div class="layout-header2">
+       <h1><img src="http://i.imgur.com/eELJp0X.png?1" href="ui-layout.xhtml"> </img></h1>
     <link rel="stylesheet" type="text/css" href="resources/css/layout.css"/>
     <link rel="stylesheet" type="text/css" href="resources/css/format.css"/>
-  </head>
+    <link rel="stylesheet" type="text/css" href="resources/css/layout-login.css"/>
+      </div>
+
   <body>
+      <div class="login">
     <form method="POST" action="j_security_check">
           <table>
             <tr>
-              <th class="prompt">#{uistrings.username}: </th>
+              <th class="prompt">#{uistrings.username} Username: </th>
               <td><input type="text" name="j_username"/></td>
             </tr>
             <tr>
-              <th class="prompt">#{uistrings.password}: </th>
+              <th class="prompt">#{uistrings.password} Password: </th>
               <td><input type="password" name="j_password"/></td>
             </tr>
           </table>
           <input type="submit" value="Login"/>
         </form>
+      </div>
   </body>
 </html>
