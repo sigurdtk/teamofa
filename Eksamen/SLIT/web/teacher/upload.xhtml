@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:t="http://myfaces.apache.org/tomahawk"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+  <h:head>
+    <title>Facelet Title</title>
+  </h:head>
+  <h:body>
+    <ui:composition template="/templates/masterlayout.xhtml">
+      <ui:define name="content">
+        <h1>CV Upload</h1>
+        <h:form enctype="multipart/form-data">
+          <t:inputFileUpload label="Velg fil" value="#{uploadbean.upload}"/>
+          <br/>
+          <!-- and this button triggers the uploading and persisting process -->
+          <h:commandButton value="Last opp fil" action="#{uploadbean.submit()}"/>
+        </h:form>
+            <br/>
+            
+            <h3>Opplastede dokumenter:</h3>
+            <h:dataTable value="#{teacherListBean.list}" var="t" >
+              <h:column>
+                <f:facet name="header">Id</f:facet>
+                #{t.id}
+              </h:column>
+              <h:column>
+                <f:facet name="header">Brukernavn</f:facet>
+                #{t.username}
+              </h:column>
+              <h:column>
+                <f:facet name="header">Dokument</f:facet>
+                #{t.cv}
+              </h:column>
+              <h:column>
+                <f:facet name="header"></f:facet>
+                <h:form rendered="#{! (empty t.cv)}">
+                  <h:commandLink value='Last ned dokument' action='#{downloadBean.downloadFile(t.cv.id)}'/>
+                </h:form>
+              </h:column>
+            </h:dataTable>
+        
+        
+      </ui:define>
+      <ui:define name="menuitems">
+        <ui:include src="/teacher/menu.xhtml" />
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>
+
